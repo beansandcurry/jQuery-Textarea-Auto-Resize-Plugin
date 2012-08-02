@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo for jQuery Textarea Auto-Resize Plugin</title>
+  <meta name="description" content="A jQuery Plugin that Auto-Resizes textareas as they change">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="wrapper">
+  <header class="page-header">
+    <h1>jQuery Textarea Auto-Resize Plugin</h1>
+    <p>Finally a textarea autoresize plugin that works anywhere</p>
+    <ul class="feature-list">
+      <li>Doesn&rsquo;t mess up with your form events</li>
+      <li>Doesn&rsquo;t create additional form elements</li>
+      <li>Wide browser support</li>
+      <li>Debugging option to see how the height is being measured</li>
+    </ul>
+  </header>
+  <div class="install" id="install">
+    <h2>Download &amp; Installation</h2>
+    <p><a href="https://github.com/beansandcurry/jQuery-Textarea-Auto-Resize-Plugin" class="btn">View Project on Github</a> <a href="#" class="btn">Download Plugin</a></p>
+    <p>Installation is as simple as this:</p>
+    <script src="https://gist.github.com/3239156.js?file=install-instructions.html"></script>
+  </div>
+  <section class="demo">
+    <h2 id="demos">Demos &amp; Examples</h2>
+    <div class="example">
+      <p>Default textarea styles</p>
+      <textarea placeholder="Enter some text here" id="myTextarea1"></textarea>
+    </div>
+    <div class="example">
+      <p>Bizarre line-height and letter spacing</p>
+      <textarea placeholder="Enter some text here" id="myTextarea2"></textarea>
+    </div>
+    <div class="example">
+      <p>Fixed width and paddings</p>
+      <textarea placeholder="Enter some text here" id="myTextarea3"></textarea>
+    </div>
+    <div class="example">
+      <p>CSS height animation &mdash; <code>textarea{transition:height .3s;}</code></p>
+      <textarea placeholder="Enter some text here" id="myTextarea4"></textarea>
+    </div>
+    <p><a href="https://github.com/beansandcurry/jQuery-Textarea-Auto-Resize-Plugin" class="btn">View Project on Github</a> <a href="#" class="btn">Download Plugin</a></p>
+  </section>
+  <section class="issues">
+    <h2>Bugs &amp; Issues</h2>
+    <p>If you have any problems using the plugin, please report it via <a href="https://github.com/beansandcurry/jQuery-Textarea-Auto-Resize-Plugin/issues">github issues</a> and we&rsquo;ll try to work something out.</p>
+  </section>
+  <footer class="page-footer">
+    Copyright 2012, <a href="http://www.beansandcurry.com/">Beans &amp; Curry</a><br />
+    Released under the MIT License
+  </footer>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="autoresize.jquery.js"></script>
+<script>
+$(function () {
+  $("textarea").autoresize();
+})
+</script>
+</body>
+</html>
