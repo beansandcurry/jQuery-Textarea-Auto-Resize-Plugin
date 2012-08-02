@@ -13,10 +13,12 @@ A jQuery Plugin that Auto-Resizes textareas as they change
 Download
 --------
 &rarr; <a href="https://github.com/beansandcurry/jQuery-Textarea-Auto-Resize-Plugin" class="btn">View Project on Github</a><br />
-&rarr; <a href="#" class="btn">Download Plugin</a>
+&rarr; <a href="https://raw.github.com/beansandcurry/jQuery-Textarea-Auto-Resize-Plugin/master/autoresize.jquery.js" class="btn">Download Plugin</a>
 
 Installation
 ------------
+&rarr; <a href="http://beansandcurry.com/sandbox/jQuery-Textarea-Auto-Resize-Plugin/demo.html" class="btn">Visit the Instructions and Demos Page</a><br />
+
 	<script src="jquery.js"></script>
 	<script src="autoresize.jquery.js"></script>
 	<script>
@@ -31,7 +33,7 @@ Installation
 
 Demos
 -----
-<a href="#" class="btn">Plugin Demos</a>
+<a href="http://beansandcurry.com/sandbox/jQuery-Textarea-Auto-Resize-Plugin/demo.html#demos" class="btn">Plugin Demos</a>
   
 Copyright 2012 Beans & Curry. All rights reserved.
 
