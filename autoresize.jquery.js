@@ -22,7 +22,6 @@
         'word-spacing',
         'text-indent',
         'line-height',
-        'width',
         'padding-top',
         'padding-bottom'
       ];
@@ -42,11 +41,12 @@
       $.each(styles, function (index, property) {
         mirror.css(property, $this.css(property));
       });
-      
+
       mirror.css({
         'word-wrap': 'break-word',
         'position': 'absolute',
-        'height': 'auto'
+        'height': 'auto',
+        'width': $this.width()
       })
 
       if (settings.debug === false) {
