@@ -31,7 +31,7 @@
       var breakTag = '<br />';
       return (text + '<br />~').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
     }
-    
+
     return this.each(function () {
       var $this = $(this),
         mirror = $("<div></div>");
@@ -63,7 +63,11 @@
         });
       }
       /* Copy any text that is in the textarea to the mirror */
-      mirror.html(textarea2div($this.val()));
+      mirror.html(textarea2div($this.val()
+                                    .replace(/&/g,'&amp;')
+                                    .replace(/ {2}/g, '&nbsp;')
+                                    .replace(/<|>/g, '&gt;')
+                                    .replace(/\n/g, '<br />')));
       /* Append the mirror to the body of your HTML */
       $("body").append(mirror);
 
@@ -73,7 +77,11 @@
       /* Use the textchange event to update the mirror's text and update the textarea's height */
       /* Tip: You can add "transition: height .2s" to your textarea's CSS to get a nice animation when the height changes. */
       $this.bind("textchange", function () {
-        mirror.html(textarea2div($this.val()));
+        mirror.html(textarea2div($this.val()
+                                      .replace(/&/g,'&amp;')
+                                      .replace(/ {2}/g, '&nbsp;')
+                                      .replace(/<|>/g, '&gt;')
+                                      .replace(/\n/g, '<br />')));
         $this.height(mirror.height());
       });
     });
@@ -82,28 +90,28 @@
   /* Defining the 'textchange' event */
   /* Part of this code was taken from ZURB's jQuery TextChange Plugin http://www.zurb.com/playground/jquery-text-change-custom-event */
   $.event.special.textchange = {
-    
+
     setup: function (data, namespaces) {
       $(this).data('lastValue', this.contentEditable === 'true' ? $(this).html() : $(this).val());
       $(this).bind('keyup.textchange', $.event.special.textchange.handler);
       $(this).bind('cut.textchange paste.textchange input.textchange', $.event.special.textchange.delayedHandler);
     },
-    
+
     teardown: function (namespaces) {
       $(this).unbind('.textchange');
     },
-    
+
     handler: function (event) {
       $.event.special.textchange.triggerIfChanged($(this));
     },
-    
+
     delayedHandler: function (event) {
       var element = $(this);
       setTimeout(function () {
         $.event.special.textchange.triggerIfChanged(element);
       }, 25);
     },
-    
+
     triggerIfChanged: function (element) {
       var current = element[0].contentEditable === 'true' ? element.html() : element.val();
       if (current !== element.data('lastValue')) {
