@@ -47,7 +47,7 @@
         'position': 'absolute',
         'height': 'auto',
         'width': $this.width()
-      })
+      });
 
       if (settings.debug === false) {
         /* Position the mirror outside of the screen */
