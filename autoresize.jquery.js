@@ -29,7 +29,7 @@
     /* Replaces line breaks with <br /> tags for the text entered in the textarea */
     function textarea2div(text) {
       var breakTag = '<br />';
-      return (text + '<br />~').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+      return (text + '<br />').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
     }
 
     return this.each(function () {
